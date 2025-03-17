@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +23,112 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+:root {
+  --font-atma: "Atma", sans-serif;
+}
+
+body {
+  font-family: var(--font-atma);
+}
+
+/* Alternatif olarak Tailwind'de */
+.font-atma {
+  font-family: var(--font-atma);
+}
+
+
+.notfound {
+  background: black ;
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
+  height: 100vh ;
+  overflow: hidden ;
+  font-family: Arial, sans-serif ;
+  text-align: center ;
+  position: relative ;
+}
+
+.static {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-radial-gradient(
+        #000 0 0.0001%,
+        #fff 0 0.0002%,
+        #ff0000 0 0.0003%,
+        #00ff00 0 0.0004%,
+        #0000ff 0 0.0005%
+      )
+      50% 0/2500px 2500px,
+    repeating-conic-gradient(
+        #000 0 0.0001%,
+        #fff 0 0.0002%,
+        #ff0000 0 0.0003%,
+        #00ff00 0 0.0004%,
+        #0000ff 0 0.0005%
+      )
+      60% 60%/2500px 2500px;
+  background-blend-mode: difference;
+  animation: staticAnimation 0.2s infinite alternate;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.overlay {
+  position: relative;
+  z-index: 3;
+}
+
+.error-text {
+  font-size: 10rem;
+  font-weight: bold;
+  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+}
+
+.subtext {
+  font-size: 3rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.instructions {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.instructions a {
+  color: red;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.instructions a:hover {
+  text-decoration: underline;
+}
+
+@keyframes staticAnimation {
+  100% {
+    background-position: 50% 0, 60% 50%;
+  }
+}
+
+@keyframes glitch-flicker {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
 }
