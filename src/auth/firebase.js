@@ -15,4 +15,3 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
 
-// const tmdbApiKey = process.env.NEXT_PUBLIC_TMDB_KEY;
