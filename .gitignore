@@ -407,3 +407,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# clerk configuration (can include secrets)
+/.clerk/
