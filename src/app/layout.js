@@ -43,6 +43,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { shadesOfPurple } from "@clerk/themes";
+import Home from "./page";
 
 const atmaFont = Atma({
   variable: "--font-atma",
@@ -60,7 +61,7 @@ const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider
-      appearance={{ baseTheme: shadesOfPurple}}
+      appearance={{ baseTheme: shadesOfPurple }}
       publishableKey={clerkFrontendApi || ""}
     >
       <html lang="en">
