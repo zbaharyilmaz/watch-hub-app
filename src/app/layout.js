@@ -11,8 +11,9 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { shadesOfPurple } from "@clerk/themes";
-import HomePage from "./page";
+import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
+import { ClerkThemeProvider } from "@/components/providers/ClerkThemeProvider";
 
 const atmaFont = Atma({
   variable: "--font-atma",
@@ -27,22 +28,36 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider appearance={{ baseTheme: shadesOfPurple }}>
-      <html lang="en">
-        <body className={`${atmaFont.variable} antialiased`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <Navbar/>
-            {/* <SignedOut>
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn> */}
-          </header>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${atmaFont.variable} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ClerkThemeProvider>
+            <header className="flex justify-end items-center p-4 gap-4 h-16">
+              <Navbar />
+            </header>
+            {children}
+            <ToastContainer
+              position="bottom-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+              toastClassName="dark:bg-gray-800 dark:text-white"
+              bodyClassName="dark:text-white"
+            />
+          </ClerkThemeProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

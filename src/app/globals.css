@@ -1,109 +1,93 @@
 @import "tailwindcss";
 
-/* :root {
+:root {
   --background: #ffffff;
   --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #f59e0b;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #111827;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #111827;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #f59e0b;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #1f2937;
+  --card-foreground: #f3f4f6;
+  --popover: #1f2937;
+  --popover-foreground: #f3f4f6;
+  --primary: #f59e0b;
+  --primary-foreground: #ffffff;
+  --secondary: #374151;
+  --secondary-foreground: #f3f4f6;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: #374151;
+  --accent-foreground: #f3f4f6;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #374151;
+  --input: #374151;
+  --ring: #f59e0b;
+}
+
+* {
+  border-color: hsl(var(--border));
 }
 
 body {
   font-family: var(--font-atma);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-*/
+
 .font-atma {
   font-family: var(--font-atma);
 }
 
-
-.notfound {
-  background: black ;
-  display: flex ;
-  justify-content: center ;
-  align-items: center ;
-  height: 100vh ;
-  overflow: hidden ;
-  font-family: Arial, sans-serif ;
-  text-align: center ;
-  position: relative ;
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
 }
 
-.static {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-radial-gradient(
-        #000 0 0.0001%,
-        #fff 0 0.0002%,
-        #ff0000 0 0.0003%,
-        #00ff00 0 0.0004%,
-        #0000ff 0 0.0005%
-      )
-      50% 0/2500px 2500px,
-    repeating-conic-gradient(
-        #000 0 0.0001%,
-        #fff 0 0.0002%,
-        #ff0000 0 0.0003%,
-        #00ff00 0 0.0004%,
-        #0000ff 0 0.0005%
-      )
-      60% 60%/2500px 2500px;
-  background-blend-mode: difference;
-  animation: staticAnimation 0.2s infinite alternate;
-  z-index: 1;
-  pointer-events: none;
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.overlay {
-  position: relative;
-  z-index: 3;
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
 }
 
-.error-text {
-  font-size: 10rem;
-  font-weight: bold;
-  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
 }
 
-.subtext {
-  font-size: 3rem;
-  margin-top: 10px;
-  text-transform: uppercase;
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
 }
 
-.instructions {
-  margin-top: 20px;
-  font-size: 1.5rem;
-  opacity: 0.7;
+/* Navbar text colors */
+.navbar-text {
+  color: #374151; /* gray-700 */
 }
 
-.instructions a {
-  color: red;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.instructions a:hover {
-  text-decoration: underline;
-}
-
-@keyframes staticAnimation {
-  100% {
-    background-position: 50% 0, 60% 50%;
-  }
-}
-
-@keyframes glitch-flicker {
-  0% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  50% {
-    opacity: 0.7;
-    transform: translateX(-3px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(3px);
-  }
+.dark .navbar-text {
+  color: #ffffff !important; /* white */
 }

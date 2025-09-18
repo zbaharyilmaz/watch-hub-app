@@ -1,47 +1,169 @@
-# 🎬 Watch Hub App  
-### Your Ultimate Movie Hub!
+# 🎬 Watch Hub App
 
-Watch Hub is your all-in-one movie tracker and discovery app! Seamlessly browse, search, and get detailed information about your favorite movies in a modern, user-friendly interface powered by Next.js, Tailwind CSS, Firebase, and Axios. Enjoy a fast and responsive performance while managing your movie collection.
+### Your Ultimate Entertainment Hub!
 
-👉 **Live Demo:** []
+Watch Hub is a modern, full-stack entertainment discovery app built with Next.js 15, featuring authentication, dark mode, and a beautiful user interface. Discover movies, manage your watchlist, and enjoy a seamless viewing experience.
 
-### Demo
+👉 **Live Demo:** [http://localhost:3001](http://localhost:3001)
 
-![Project Demo]()
+## ✨ Features
 
-### Features
+- 🔐 **Authentication**: Secure login and registration with Clerk
+- 🌙 **Dark/Light Mode**: Beautiful theme switching with system preference detection
+- 📱 **Responsive Design**: Works perfectly on all devices
+- 🎬 **Movie Discovery**: Browse and discover entertainment content
+- ⭐ **Favorites**: Save your favorite movies and shows
+- 🔔 **Toast Notifications**: Smooth user feedback
+- 🎨 **Modern UI**: Clean, professional design with Tailwind CSS
 
-- 🔍 Movie Search: Quickly find your favorite movies with an easy-to-use search bar.
-- 🌐 Movie Library: Access a wide collection of movies from various genres.
-- 🔐 Authentication: Secure login and registration with Firebase.
-- ⭐ Ratings & Details: View ratings, reviews, and detailed information about each movie.
-- 🌙 Light/Dark Mode: Enjoy a personalized experience by switching between light and dark themes.
-- 🔔 Toast Notifications: Informative and smooth notifications powered by React-Toastify.
+## 🛠️ Tech Stack
 
-### Tech Stack
+- **Next.js 15** - Latest React framework with App Router
+- **React 19** - Latest React with concurrent features
+- **Tailwind CSS 4** - Modern utility-first CSS framework
+- **Clerk** - Authentication and user management
+- **Next Themes** - Theme switching functionality
+- **React Icons** - Beautiful icon library
+- **React Toastify** - Toast notifications
+- **pnpm** - Fast, efficient package manager
 
-- **Next.js** - Fast, server-rendered React framework.
-- **Tailwind CSS** - Modern and responsive styling framework.
-- **Firebase** - Authentication and data management.
-- **Axios** - Efficient API requests to fetch movie data.
-- **Heroicons** - Sleek and modern icons.
-- **React-Toastify** - Seamless toast notifications.
-- **pnpm** - Efficient package management.
+## 📁 Project Structure
 
-### Project Structure
+```
+src/
+├── app/
+│   ├── (auth)/
+│   │   ├── signin/[[...rest]]/page.js
+│   │   └── signup/[[...rest]]/page.js
+│   ├── about/page.js
+│   ├── dashboard/page.js
+│   ├── favorites/page.js
+│   ├── globals.css
+│   ├── layout.js
+│   ├── not-found.jsx
+│   └── page.js
+├── components/
+│   ├── Navbar.jsx
+│   ├── providers/
+│   │   └── ClerkThemeProvider.jsx
+│   └── ui/
+│       └── SwitchButton.jsx
+└── middleware.js
+```
 
-### Code Highlights
+## 🚀 Getting Started
 
-- **Authentication:** Firebase-powered user authentication (sign-up and login).
-- **Movie Search & Display:** Fetch and display movie data via Axios from TMDB API.
-- **Responsive UI:** Tailwind CSS makes the app modern and responsive across all devices.
+### Prerequisites
 
-### Future Enhancements
+- Node.js 18+
+- pnpm (recommended) or npm
 
-- **User Watchlists:** Save favorite movies to a personalized watchlist.
-- **Recommendations:** Personalized movie recommendations based on user preferences.
-- **Interactive UI Animations:** Enhance the user experience with smooth animations.
+### Installation
 
-### Contributing
+1. **Clone the repository**
 
-Feel free to fork the repo and submit PRs for any improvements or bug fixes!
+   ```bash
+   git clone <repository-url>
+   cd watch-hub-app
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Set up environment variables**
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Add your Clerk keys to `.env.local`
+
+4. **Run the development server**
+
+   ```bash
+   pnpm dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3001](http://localhost:3001)
+
+## 📜 Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm clean` - Clean build cache and node_modules
+- `pnpm clean:cache` - Clean only build cache
+
+## 🎨 Features in Detail
+
+### Authentication
+
+- Secure user registration and login
+- Protected routes with middleware
+- User profile management
+
+### Theme System
+
+- Light, dark, and system theme options
+- Smooth transitions between themes
+- Clerk components theme integration
+
+### Responsive Design
+
+- Mobile-first approach
+- Tablet and desktop optimized
+- Touch-friendly interactions
+
+## 🔧 Configuration
+
+### Clerk Setup
+
+1. Create a Clerk account at [clerk.com](https://clerk.com)
+2. Create a new application
+3. Copy your keys to `.env.local`
+
+### Environment Variables
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
+CLERK_SECRET_KEY=your_secret_key
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables
+4. Deploy!
+
+### Other Platforms
+
+- Netlify
+- Railway
+- DigitalOcean App Platform
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) for the amazing framework
+- [Clerk](https://clerk.com/) for authentication
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [React Icons](https://react-icons.github.io/react-icons/) for icons
