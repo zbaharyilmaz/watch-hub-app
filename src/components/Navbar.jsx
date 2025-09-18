@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
@@ -62,6 +64,18 @@ export default function Navbar() {
               appearance={{
                 elements: {
                   avatarBox: "w-8 h-8",
+                  userButtonPopoverCard:
+                    "bg-white border border-gray-200 shadow-lg",
+                  userButtonPopoverActionButton:
+                    "text-gray-900 hover:bg-gray-100",
+                  userButtonPopoverActionButtonText:
+                    "text-gray-900 font-medium",
+                  userButtonPopoverFooter: "hidden",
+                },
+                variables: {
+                  colorText: "#1f2937",
+                  colorTextSecondary: "#374151",
+                  colorBackground: "#ffffff",
                 },
               }}
             />

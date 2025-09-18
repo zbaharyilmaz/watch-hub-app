@@ -3,9 +3,9 @@
 import React from "react";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 import Link from "next/link";
-import { MovieCard, StatsCard } from "@/components/common";
-import { Card } from "@/components/ui";
-import { favoriteMovies } from "@/constants/movies";
+import { MovieCard, StatsCard } from "../../components/common";
+import { Card, Button } from "../../components/ui";
+import { favoriteMovies } from "../../constants/movies";
 
 export default function FavoritesPage() {
   return (

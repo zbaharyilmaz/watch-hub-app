@@ -5,7 +5,7 @@ const Button = ({
   variant = "primary",
   size = "md",
   className = "",
-  onClick,
+  onClick = () => {},
   type = "button",
   disabled = false,
   ...props

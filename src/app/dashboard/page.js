@@ -3,7 +3,7 @@
 import React from "react";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 import Link from "next/link";
-import { Card, Button } from "@/components/ui";
+import { Card, Button } from "../../components/ui";
 
 export default function Dashboard() {
   return (
@@ -28,7 +28,7 @@ export default function Dashboard() {
                 <p className="text-gray-300 mb-4">
                   Keep track of movies and shows you want to watch
                 </p>
-                <Button variant="primary" size="sm">
+                <Button variant="primary" size="sm" onClick={() => {}}>
                   View Watchlist
                 </Button>
               </Card>
@@ -40,7 +40,7 @@ export default function Dashboard() {
                 <p className="text-gray-300 mb-4">
                   See your recent viewing history
                 </p>
-                <Button variant="info" size="sm">
+                <Button variant="info" size="sm" onClick={() => {}}>
                   View History
                 </Button>
               </Card>
@@ -52,7 +52,7 @@ export default function Dashboard() {
                 <p className="text-gray-300 mb-4">
                   Discover new content based on your preferences
                 </p>
-                <Button variant="success" size="sm">
+                <Button variant="success" size="sm" onClick={() => {}}>
                   Get Recommendations
                 </Button>
               </Card>

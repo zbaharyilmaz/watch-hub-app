@@ -91,3 +91,25 @@ body {
 .dark .navbar-text {
   color: #ffffff !important; /* white */
 }
+
+/* Clerk UserButton menu styling */
+.cl-userButtonPopoverCard {
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.cl-userButtonPopoverActionButton {
+  color: #1f2937 !important; /* gray-900 */
+  font-weight: 500 !important;
+}
+
+.cl-userButtonPopoverActionButton:hover {
+  background-color: #f3f4f6 !important; /* gray-100 */
+}
+
+.cl-userButtonPopoverActionButtonText {
+  color: #1f2937 !important; /* gray-900 */
+  font-weight: 500 !important;
+}
