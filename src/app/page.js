@@ -1,7 +1,9 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { Button, Card } from "@/components/ui";
 
 export default function HomePage() {
   return (
@@ -22,25 +24,30 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <SignedOut>
-                <Link
-                  href="/signup"
-                  className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started Free
+                <Link href="/signup">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    className="transform hover:scale-105"
+                  >
+                    Get Started Free
+                  </Button>
                 </Link>
-                <Link
-                  href="/signin"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
-                >
-                  Sign In
+                <Link href="/signin">
+                  <Button variant="secondary" size="lg">
+                    Sign In
+                  </Button>
                 </Link>
               </SignedOut>
               <SignedIn>
-                <Link
-                  href="/dashboard"
-                  className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105"
-                >
-                  Go to Dashboard
+                <Link href="/dashboard">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    className="transform hover:scale-105"
+                  >
+                    Go to Dashboard
+                  </Button>
                 </Link>
               </SignedIn>
             </div>
@@ -68,7 +75,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 text-center hover:transform hover:scale-105 transition-all duration-300">
+            <Card className="p-8 text-center" hover>
               <div className="text-5xl mb-4">🎬</div>
               <h3 className="text-2xl font-semibold text-white mb-4">
                 Unlimited Content
@@ -77,9 +84,9 @@ export default function HomePage() {
                 Access thousands of movies and TV shows from various genres and
                 streaming platforms.
               </p>
-            </div>
+            </Card>
 
-            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 text-center hover:transform hover:scale-105 transition-all duration-300">
+            <Card className="p-8 text-center" hover>
               <div className="text-5xl mb-4">📱</div>
               <h3 className="text-2xl font-semibold text-white mb-4">
                 Watch Anywhere
@@ -88,9 +95,9 @@ export default function HomePage() {
                 Stream on any device - phone, tablet, laptop, or TV. Your
                 entertainment follows you.
               </p>
-            </div>
+            </Card>
 
-            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 text-center hover:transform hover:scale-105 transition-all duration-300">
+            <Card className="p-8 text-center" hover>
               <div className="text-5xl mb-4">⭐</div>
               <h3 className="text-2xl font-semibold text-white mb-4">
                 Personalized Recommendations
@@ -99,7 +106,7 @@ export default function HomePage() {
                 Get smart recommendations based on your viewing history and
                 preferences.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -141,27 +148,32 @@ export default function HomePage() {
 
           <SignedOut>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/signup"
-                className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105"
-              >
-                Start Free Trial
+              <Link href="/signup">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="transform hover:scale-105"
+                >
+                  Start Free Trial
+                </Button>
               </Link>
-              <Link
-                href="/about"
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
-              >
-                Learn More
+              <Link href="/about">
+                <Button variant="secondary" size="lg">
+                  Learn More
+                </Button>
               </Link>
             </div>
           </SignedOut>
 
           <SignedIn>
-            <Link
-              href="/dashboard"
-              className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-block"
-            >
-              Explore Dashboard
+            <Link href="/dashboard">
+              <Button
+                variant="primary"
+                size="lg"
+                className="transform hover:scale-105 inline-block"
+              >
+                Explore Dashboard
+              </Button>
             </Link>
           </SignedIn>
         </div>

@@ -47,7 +47,7 @@ src/
 │   ├── providers/
 │   │   └── ClerkThemeProvider.jsx
 │   └── ui/
-│       └── SwitchButton.jsx
+│       └── Button.jsx
 └── middleware.js
 ```
 

@@ -1,11 +1,4 @@
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Atma } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";

@@ -1,6 +1,8 @@
 "use client";
+import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Button } from "@/components/ui";
 
 const NotFound = () => {
   const router = useRouter();
@@ -20,17 +22,13 @@ const NotFound = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            onClick={() => router.back()}
-            className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-          >
+          <Button variant="primary" size="md" onClick={() => router.back()}>
             Go Back
-          </button>
-          <Link
-            href="/"
-            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-lg font-medium transition-colors"
-          >
-            Go Home
+          </Button>
+          <Link href="/">
+            <Button variant="secondary" size="md">
+              Go Home
+            </Button>
           </Link>
         </div>
       </div>

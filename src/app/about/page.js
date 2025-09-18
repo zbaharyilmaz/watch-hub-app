@@ -1,5 +1,8 @@
 "use client";
 
+import React from "react";
+import { Card, Button } from "@/components/ui";
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-8">
@@ -15,7 +18,7 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+          <Card className="p-6">
             <h3 className="text-2xl font-semibold text-white mb-4">
               🎬 Our Mission
             </h3>
@@ -25,9 +28,9 @@ export default function AboutPage() {
               recommendations, easy-to-manage watchlists, and a seamless viewing
               experience across all your devices.
             </p>
-          </div>
+          </Card>
 
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+          <Card className="p-6">
             <h3 className="text-2xl font-semibold text-white mb-4">
               ✨ Features
             </h3>
@@ -35,13 +38,12 @@ export default function AboutPage() {
               <li>• Personalized recommendations</li>
               <li>• Custom watchlists</li>
               <li>• Cross-platform sync</li>
-              <li>• Dark/Light mode</li>
               <li>• User-friendly interface</li>
             </ul>
-          </div>
+          </Card>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 text-center">
+        <Card className="p-8 text-center">
           <h3 className="text-2xl font-semibold text-white mb-4">
             🚀 Get Started
           </h3>
@@ -50,14 +52,14 @@ export default function AboutPage() {
             favorite show or movie with Watch Hub.
           </p>
           <div className="flex justify-center gap-4">
-            <button className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg transition-colors font-medium">
+            <Button variant="primary" size="md">
               Sign Up Now
-            </button>
-            <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-lg transition-colors font-medium">
+            </Button>
+            <Button variant="secondary" size="md">
               Learn More
-            </button>
+            </Button>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   );

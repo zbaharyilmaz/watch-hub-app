@@ -1,5 +1,5 @@
+import React from "react";
 import Link from "next/link";
-import SwitchButton from "./ui/SwitchButton";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
@@ -55,9 +55,8 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Theme Toggle and Auth */}
+        {/* Auth */}
         <div className="flex items-center gap-4">
-          <SwitchButton />
           <SignedIn>
             <UserButton
               appearance={{

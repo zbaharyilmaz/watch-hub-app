@@ -1,7 +1,9 @@
 "use client";
 
-import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
+import React from "react";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
+import { Card, Button } from "@/components/ui";
 
 export default function Dashboard() {
   return (
@@ -19,41 +21,41 @@ export default function Dashboard() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <Card className="p-6">
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   My Watchlist
                 </h3>
                 <p className="text-gray-300 mb-4">
                   Keep track of movies and shows you want to watch
                 </p>
-                <button className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition-colors">
+                <Button variant="primary" size="sm">
                   View Watchlist
-                </button>
-              </div>
+                </Button>
+              </Card>
 
-              <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <Card className="p-6">
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   Recently Watched
                 </h3>
                 <p className="text-gray-300 mb-4">
                   See your recent viewing history
                 </p>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors">
+                <Button variant="info" size="sm">
                   View History
-                </button>
-              </div>
+                </Button>
+              </Card>
 
-              <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <Card className="p-6">
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   Recommendations
                 </h3>
                 <p className="text-gray-300 mb-4">
                   Discover new content based on your preferences
                 </p>
-                <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors">
+                <Button variant="success" size="sm">
                   Get Recommendations
-                </button>
-              </div>
+                </Button>
+              </Card>
             </div>
           </div>
         </div>
