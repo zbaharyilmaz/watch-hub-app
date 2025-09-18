@@ -1,11 +1,33 @@
 "use client";
 
-import React from "react";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import React, { useEffect } from "react";
+import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Card, Button } from "@/components/ui";
 
 export default function Dashboard() {
+  const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      router.push("/signin");
+    }
+  }, [isLoaded, isSignedIn, router]);
+
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return null; // Will redirect via useEffect
+  }
+
   return (
     <>
       <SignedIn>
@@ -62,46 +84,8 @@ export default function Dashboard() {
       </SignedIn>
 
       <SignedOut>
-        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-8">
-          <div className="max-w-md mx-auto text-center">
-            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20">
-              <div className="text-6xl mb-6">🔒</div>
-              <h1 className="text-3xl font-bold text-white mb-4">
-                Access Required
-              </h1>
-              <p className="text-gray-300 mb-6">
-                You need to be signed in to access your dashboard. Create an
-                account or sign in to continue.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/signup"
-                  className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-                >
-                  Create Account
-                </Link>
-                <Link
-                  href="/signin"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-lg transition-colors font-medium"
-                >
-                  Sign In
-                </Link>
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-white/20">
-                <p className="text-gray-400 text-sm">
-                  New to Watch Hub?
-                  <Link
-                    href="/about"
-                    className="text-amber-400 hover:text-amber-300 ml-1"
-                  >
-                    Learn more about our features
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+          <div className="text-white text-xl">Redirecting to sign in...</div>
         </div>
       </SignedOut>
     </>
