@@ -4,17 +4,48 @@
 
 Watch Hub is a modern, full-stack entertainment discovery app built with Next.js 15, featuring authentication, dark mode, and a beautiful user interface. Discover movies, manage your watchlist, and enjoy a seamless viewing experience.
 
-👉 **Live Demo:** [http://localhost:3001](http://localhost:3001)
+### 🎥 Key Features Showcase
+
+- **🔐 Authentication Flow**: Secure sign-in and registration
+- **🎬 Movie Discovery**: Browse and discover entertainment content
+- **⭐ Favorites Management**: Save and organize your watchlist
+- **📱 Responsive Design**: Perfect on all devices
+
+### 🚀 Live Demo
+
+Experience the app live at: []()
 
 ## ✨ Features
 
 - 🔐 **Authentication**: Secure login and registration with Clerk
-- 🌙 **Dark/Light Mode**: Beautiful theme switching with system preference detection
+  detection
 - 📱 **Responsive Design**: Works perfectly on all devices
 - 🎬 **Movie Discovery**: Browse and discover entertainment content
 - ⭐ **Favorites**: Save your favorite movies and shows
 - 🔔 **Toast Notifications**: Smooth user feedback
 - 🎨 **Modern UI**: Clean, professional design with Tailwind CSS
+
+## 📱 Screenshots
+
+### Home Page
+
+![Home Page](./public/demo/watch-hub.png)
+_Beautiful landing page with modern design_
+
+### Dashboard
+
+![Dashboard](./public/demo/dashboard.png)
+_User dashboard with personalized content_
+
+### Favorites
+
+![Favorites](./public/demo/favorites.png)
+_Favorites page with movie cards and statistics_
+
+### Authentication
+
+![Sign In](./public/demo/signin.png)
+_Secure authentication flow_
 
 ## 🛠️ Tech Stack
 
@@ -31,8 +62,8 @@ Watch Hub is a modern, full-stack entertainment discovery app built with Next.js
 
 ```
 src/
-├── app/
-│   ├── (auth)/
+├── app/                           # Next.js App Router
+│   ├── (auth)/                   # Route groups
 │   │   ├── signin/[[...rest]]/page.js
 │   │   └── signup/[[...rest]]/page.js
 │   ├── about/page.js
@@ -42,21 +73,41 @@ src/
 │   ├── layout.js
 │   ├── not-found.jsx
 │   └── page.js
-├── components/
-│   ├── Navbar.jsx
-│   ├── providers/
+├── components/                    # React components
+│   ├── ui/                       # Reusable UI components
+│   │   ├── Button.jsx
+│   │   ├── Card.jsx
+│   │   └── index.js
+│   ├── common/                   # Common components
+│   │   ├── MovieCard.jsx
+│   │   ├── StatsCard.jsx
+│   │   └── index.js
+│   ├── providers/                # Context providers
 │   │   └── ClerkThemeProvider.jsx
-│   └── ui/
-│       └── Button.jsx
-└── middleware.js
+│   └── Navbar.jsx
+├── config/                       # Configuration files
+│   └── constants.js              # App constants & routes
+├── constants/                    # Static data
+│   └── movies.js                 # Movie data
+├── utils/                        # Utility functions
+│   ├── validation.js             # Validation utilities
+│   └── index.js
+└── middleware.js                 # Next.js middleware (root level)
 ```
 
+### 📂 Directory Structure Explained
+
+- **`app/`** - Next.js App Router pages and layouts
+- **`components/`** - Reusable React components organized by type
+  - **`ui/`** - Reusable UI components (Button, Card)
+  - **`common/`** - Common components (MovieCard, StatsCard)
+  - **`providers/`** - Context providers (ClerkThemeProvider)
+- **`config/`** - Application configuration and constants
+- **`constants/`** - Static data and mock data
+- **`utils/`** - Utility functions (validation, formatting)
+- **`middleware.js`** - Next.js middleware for authentication
+
 ## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- pnpm (recommended) or npm
 
 ### Installation
 
@@ -107,12 +158,6 @@ src/
 - Protected routes with middleware
 - User profile management
 
-### Theme System
-
-- Light, dark, and system theme options
-- Smooth transitions between themes
-- Clerk components theme integration
-
 ### Responsive Design
 
 - Mobile-first approach
@@ -148,18 +193,6 @@ CLERK_SECRET_KEY=your_secret_key
 - Netlify
 - Railway
 - DigitalOcean App Platform
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 

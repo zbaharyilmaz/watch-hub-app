@@ -1,35 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import React from "react";
+import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 import Link from "next/link";
 import { MovieCard, StatsCard } from "@/components/common";
 import { Card } from "@/components/ui";
 import { favoriteMovies } from "@/constants/movies";
 
 export default function FavoritesPage() {
-  const { isSignedIn, isLoaded } = useUser();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isLoaded && !isSignedIn) {
-      router.push("/signin");
-    }
-  }, [isLoaded, isSignedIn, router]);
-
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
-      </div>
-    );
-  }
-
-  if (!isSignedIn) {
-    return null; // Will redirect via useEffect
-  }
-
   return (
     <>
       <SignedIn>
@@ -89,9 +67,7 @@ export default function FavoritesPage() {
       </SignedIn>
 
       <SignedOut>
-        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
-          <div className="text-white text-xl">Redirecting to sign in...</div>
-        </div>
+        <RedirectToSignIn />
       </SignedOut>
     </>
   );
